@@ -6,7 +6,7 @@ using System.Globalization;
 using System.IO;
 using UnityEngine;
 
-namespace MultyLanguageSupporter
+namespace MultiLanguageSupporter
 {
     public class CSVLoader
     {

@@ -1,8 +1,8 @@
-using MultyLanguageSupporter.Localizers;
+using MultiLanguageSupporter.Localizers;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace MultyLanguageSupporter
+namespace MultiLanguageSupporter
 {
     public class LanguageSupporter
     {
@@ -23,19 +23,19 @@ namespace MultyLanguageSupporter
         public static void UpdateAllLocalizers()
         {
             foreach (var localizer in Localizers)
-                SetText(localizer);
+                Localize(localizer);
         }
 
         internal static void RegisterLocalizer(ILocalizer localizer)
         {
             if (Localizers.Contains(localizer)) return;
             Localizers.Add(localizer);
-            SetText(localizer);
+            Localize(localizer);
         }
 
         internal static bool DisposeLocalizer(ILocalizer localizer) => Localizers.Remove(localizer);
 
-        private static void SetText(ILocalizer localizer)
+        private static void Localize(ILocalizer localizer)
         {
             if (!KeyValueData.TryGetValue(localizer.LocalizerKey, out string value))
                 value = "KeyNotFound";

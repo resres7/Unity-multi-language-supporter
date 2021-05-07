@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MultyLanguageSupporter.Localizers
+namespace MultiLanguageSupporter.Localizers
 {
     public interface ILocalizer : IDisposable
     {

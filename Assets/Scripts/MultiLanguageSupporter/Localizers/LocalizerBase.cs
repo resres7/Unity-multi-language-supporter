@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MultyLanguageSupporter.Localizers
+namespace MultiLanguageSupporter.Localizers
 {
     public abstract class LocalizerBase : MonoBehaviour, ILocalizer
     {
@@ -8,13 +8,14 @@ namespace MultyLanguageSupporter.Localizers
         private string localizerKey;
         public string LocalizerKey => localizerKey;
 
-        protected abstract void GetTextComponent();
 
         private void Awake()
         {
-            GetTextComponent();
             LanguageSupporter.RegisterLocalizer(this);
+            OnAwake();
         }
+
+        public virtual void OnAwake() { }
 
         public abstract void SetText(string text);
 
